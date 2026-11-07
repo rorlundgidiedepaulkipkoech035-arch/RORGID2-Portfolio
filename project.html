@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore RORGID technology and cybersecurity projects.">
+
+    <title>RORGID | Projects</title>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <nav class="navbar container">
+
+        <a href="index.html" class="logo">
+            ROR<span>GID</span><small>.</small>
+        </a>
+
+        <a href="index.html" class="text-link">
+            ← Back Home
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="project-list container">
+
+        <p class="eyebrow">
+            RORGID / PORTFOLIO
+        </p>
+
+        <h1>
+            Projects & Experiments
+        </h1>
+
+        <p class="project-list-intro">
+
+            A collection of practical technology
+            and cybersecurity projects.
+
+        </p>
+
+        <div class="project-list-grid" id="projectsContainer"></div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <a href="index.html" class="logo">
+            ROR<span>GID</span><small>.</small>
+        </a>
+
+        <p>
+            © <span id="year"></span> RORGID.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="projects-data.js"></script>
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+const container =
+    document.getElementById("projectsContainer");
+
+
+projects.forEach(project => {
+
+    const item = document.createElement("article");
+
+    item.className = "project-list-item";
+
+
+    const category = document.createElement("p");
+
+    category.className = "project-category";
+
+    category.textContent = project.category;
+
+
+    const title = document.createElement("h3");
+
+    title.textContent = project.title;
+
+
+    const description = document.createElement("p");
+
+    description.textContent = project.description;
+
+
+    item.append(category, title, description);
+
+    container.appendChild(item);
+
+});
+
+</script>
+
+</body>
+</html>
